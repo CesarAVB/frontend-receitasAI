@@ -3,6 +3,7 @@
 Interface web moderna e responsiva para o gerador inteligente de receitas. Desenvolvida com **Angular 19** utilizando **Standalone Components**, **Signals** e integração com API REST do backend Spring Boot.
 
 
+
 ![Screenshot](public/receita01.png)
 
 ## 📋 Sobre o Projeto
@@ -146,8 +147,9 @@ O layout se adapta automaticamente:
 - [ ] Adicionar suporte para imagens de receitas
 - [ ] Criar histórico de receitas geradas
 - [ ] Implementar favoritos
+
 ```
 ⭐ **Se este projeto foi útil para você, considere dar uma estrela no repositório!**
-
+```
 
 ![Screenshot](public/receita02.png)
