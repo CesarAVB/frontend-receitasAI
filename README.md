@@ -2,6 +2,8 @@
 
 Interface web moderna e responsiva para o gerador inteligente de receitas. Desenvolvida com **Angular 19** utilizando **Standalone Components**, **Signals** e integração com API REST do backend Spring Boot.
 
+![Screenshot](public/receita01.png)
+
 ## 📋 Sobre o Projeto
 
 O frontend do **Receita AI** oferece uma experiência de usuário intuitiva e fluida para:
