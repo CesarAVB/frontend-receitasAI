@@ -1,0 +1,177 @@
+.recipe-section {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .recipe-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+
+    h2 {
+      margin: 0;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 12px;
+
+      button {
+        padding: 10px 16px;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 14px;
+      }
+
+      .btn-new-recipe {
+        background-color: #b3e5b3;
+        color: #000;
+
+        &:hover {
+          background-color: #99dd99;
+          transform: translateY(-2px);
+        }
+      }
+
+      .btn-save-recipe {
+        background-color: #00ff00;
+        color: #000;
+
+        &:hover {
+          background-color: #00dd00;
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+
+  .recipe-title {
+    margin: 0;
+    font-size: 28px;
+    color: #00ff00;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .recipe-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+
+    h4 {
+      margin: 0 0 12px 0;
+      font-size: 16px;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .ingredients-section {
+      .ingredients-used {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        li {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          padding: 10px;
+          background-color: #f0f8f0;
+          border-radius: 6px;
+          border-left: 3px solid #00ff00;
+
+          .check-icon {
+            color: #00ff00;
+            font-weight: bold;
+            font-size: 18px;
+          }
+
+          .ingredient-text {
+            color: #333;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    .instructions-section {
+      .instructions-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        li {
+          display: flex;
+          gap: 12px;
+          padding: 12px;
+          background-color: #f9f9f9;
+          border-radius: 6px;
+          border-left: 3px solid #00ff00;
+
+          .step-number {
+            min-width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #00ff00;
+            color: #000;
+            border-radius: 50%;
+            font-weight: 600;
+            font-size: 12px;
+          }
+
+          .instruction-text {
+            color: #333;
+            font-size: 14px;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #999;
+
+    p {
+      margin: 0;
+      font-size: 16px;
+    }
+  }
+
+  .instruction-text {
+    white-space: pre-wrap;
+    display: block;
+    margin-left: 30px;
+  }
+
+  .instruction-bullet {
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 8px;
+  }
+
+}

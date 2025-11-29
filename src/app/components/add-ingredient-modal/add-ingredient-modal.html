@@ -1,0 +1,41 @@
+<div class="modal-overlay" (click)="onClose()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h3>Adicionar Novo Ingrediente</h3>
+      <button class="btn-close" (click)="onClose()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label>Nome do ingrediente</label>
+        <input 
+          type="text" 
+          [ngModel]="ingredientName()"
+          (ngModelChange)="ingredientName.set($event)"
+          placeholder="Ex: Farinha de trigo"
+          (keyup.enter)="onAdd()">
+      </div>
+      <div class="form-group">
+        <label>Quantidade (opcional)</label>
+        <input 
+          type="text" 
+          [ngModel]="quantity()"
+          (ngModelChange)="quantity.set($event)"
+          placeholder="Ex: 2 xícaras, 500g"
+          (keyup.enter)="onAdd()">
+      </div>
+
+      <div *ngIf="errorMessage()" class="error-message">
+        {{ errorMessage() }}
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" (click)="onClose()">Cancelar</button>
+      <button 
+        class="btn-add" 
+        (click)="onAdd()" 
+        [disabled]="isLoading()">
+        {{ isLoading() ? 'Adicionando...' : 'Adicionar' }}
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="recipe-section">
+  @if (recipe(); as currentRecipe) {
+
+  <h3 class="recipe-title">{{ currentRecipe.title }}</h3>
+  <div class="recipe-content">
+    
+    <div class="instructions-section">
+      <h4>Modo de Preparo</h4>
+      <ol class="instructions-list">
+        @for (instruction of currentRecipe.instructions; track $index) {
+        <li>
+          <span class="step-number">{{ $index + 1 }}</span>
+          <span class="instruction-text" [innerHTML]="formatInstruction(instruction)"></span>
+        </li>
+        }
+      </ol>
+    </div>
+  </div>
+  } 
+  
+  @else if (isLoading()) {
+  <div class="loading-state">
+    <div class="spinner"></div>
+    <p>Gerando uma receita deliciosa...</p>
+  </div>
+  } 
+  
+  @else {
+  <div class="empty-state">
+    <p>Adicione ingredientes e clique em "Gerar Receita" para começar</p>
+  </div>
+  } 
+  
+  @if (errorMessage()) {
+  <div class="error-message">
+    {{ errorMessage() }}
+  </div>
+  } 
+
+</div>

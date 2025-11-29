@@ -1,0 +1,190 @@
+.ingredient-section {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    text-align: center;
+  }
+
+  .search-input {
+    padding: 12px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    cursor: not-allowed;
+    color: #999;
+
+    &::placeholder {
+      color: #bbb;
+    }
+  }
+
+  .btn-add {
+    padding: 12px 16px;
+    background-color: #00ff00;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #00dd00;
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  .ingredients-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 300px;
+    overflow-y: auto;
+
+    .ingredient-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      background-color: #f0f8f0;
+      border-radius: 8px;
+      border-left: 4px solid #00ff00;
+
+      .icon {
+        font-size: 20px;
+      }
+
+      .ingredient-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+        .name {
+          font-weight: 500;
+          color: #333;
+        }
+
+        .quantity {
+          font-size: 12px;
+          color: #666;
+        }
+      }
+
+      .btn-remove {
+        background: none;
+        border: none;
+        color: #ff4444;
+        cursor: pointer;
+        font-size: 18px;
+        padding: 4px 8px;
+        transition: all 0.2s ease;
+
+        &:hover {
+          color: #ff0000;
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+
+  .btn-generate {
+    padding: 14px 16px;
+    background-color: #00ff00;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover:not(:disabled) {
+      background-color: #00dd00;
+      transform: translateY(-2px);
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+
+  // Overlay de carregamento
+  .loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .spinner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  // Spinner grande para o overlay
+  .spinner-large {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(0, 255, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: #00ff00;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+  }
+
+  // Spinner pequeno para o botão
+  .spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s linear infinite;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  // Animação de rotação
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  // Estilo para o botão desabilitado
+  .btn-generate:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}

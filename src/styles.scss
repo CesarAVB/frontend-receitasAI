@@ -1,1 +1,133 @@
-/* You can add global styles to this file, and also import other style files */
+$primary-green: #00ff00;
+$primary-green-hover: #00dd00;
+$text-dark: #333;
+$text-light: #666;
+$text-lighter: #999;
+$border-color: #e0e0e0;
+$background-light: #f9f9f9;
+$background-lighter: #f5f5f5;
+$background-modal: rgba(0, 0, 0, 0.5);
+
+// Reset global
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: $background-lighter;
+  color: $text-dark;
+}
+
+body {
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Scrollbar customizado
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $primary-green;
+  border-radius: 10px;
+
+  &:hover {
+    background: $primary-green-hover;
+  }
+}
+
+// Animações globais
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+// Estilos de botões globais
+button {
+  font-family: inherit;
+  transition: all 0.3s ease;
+
+  &:focus {
+    outline: 2px solid $primary-green;
+    outline-offset: 2px;
+  }
+}
+
+// Estilos de inputs globais
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+// Estilos de links
+a {
+  color: $primary-green;
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $primary-green-hover;
+  }
+}
+
+// Responsive
+@media (max-width: 1024px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+}

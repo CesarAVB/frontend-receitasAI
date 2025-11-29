@@ -1,0 +1,11 @@
+<div class="main-container">
+  <app-ingredient-list 
+    (ingredientsChange)="onIngredientsChange($event)"
+    (generateRecipe)="onRecipeGenerated($event)">
+  </app-ingredient-list>
+
+  <app-recipe-generator 
+    [recipe]="generatedRecipe()"
+    (recipeSaved)="onRecipeSaved()">
+  </app-recipe-generator>
+</div>
